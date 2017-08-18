@@ -2,8 +2,8 @@
 var prerender = require('./lib');
 
 var server = prerender({
-    workers: 4,
-    softIterations: 30
+    workers: process.env.PRERENDER_NUM_WORKERS,
+    iterations: process.env.PRERENDER_NUM_ITERATIONS
 });
 
 server.use(prerender.sendPrerenderHeader());
